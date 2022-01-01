@@ -47,12 +47,14 @@ Next, in templates section, upload the main input file  **reeling_input.inp**.
 Hardware Settings
 --------------------
 
-In hardware settings, specify the number of slots (parallel executions) and cores per slot you want to use. More slots means more licences used simultaneously. Refer to section :ref:`Hardware Setting` to understand how to configure cost effective hardware.
+In hardware settings, specify the number of slots (parallel executions) and cores per slot you want to use. More slots means more licences used simultaneously. Refer to section :ref:`Hardware Settings <hrdset>` to understand how to configure cost efficient hardware.
 
 .. image:: imgs/doe4.JPG
     :width: 700px
     :align: center
 
+
+.. _btchreslts:
 
 Results
 --------------

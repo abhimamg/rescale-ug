@@ -1,3 +1,5 @@
+.. _fstjob:
+
 Running First Job
 =================
 This example shows how to run a basic job on Rescale patform. The analysis software used is Abaqus 6-14-2. The example used is for the pipe-in-pip integrity analysis. This example only shows the workflow. The analysis files are not shared.
@@ -51,6 +53,9 @@ Licence
 
 .. error:: 
    Although not required but if you press :guilabel:`Check Availability` button, it will show that ``The license server is down or not responding``. This is a bug in the system and you can safely ignore it. 
+
+
+.. _hrdset:
 
 Hardware Setting
 ------------------
@@ -126,11 +131,12 @@ Status
         :width: 700px
         :align: center  
 
+
 Results
     Once the job is completed or failed, results section will show all the generated files. Some of the files such as ``.dat`` files can be open in the browser but other files like ``.msg`` need to be downloaded to the computer to view it.
 
 Charts
-    This is a feature in Rescale that allows you to see selected output of the analysis as a table and chart. It requires a specific type of post processing script. See :ref:`Results` section for sample output.
+    This is a feature in Rescale that allows you to see selected output of the analysis as a table and chart. It requires a specific type of post processing script. See :ref:`Results <btchreslts>` section for sample output.
 
 Post Processing
 -----------------------
