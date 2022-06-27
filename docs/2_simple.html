@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Running First Job &mdash; Rescale User Guide 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Downloading Files" href="4_download.html" />
+    <link rel="prev" title="Introduction" href="1_intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Rescale User Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Running First Job</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#input-files">Input Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#software-settings">Software Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-setting">Hardware Setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-and-monitoring">Running and Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-processing">Post Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="4_download.html">Downloading Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_batch.html">Batch Processing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Rescale User Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Running First Job</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/2_simple.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="running-first-job">
+<h1>Running First Job<a class="headerlink" href="#running-first-job" title="Permalink to this heading"></a></h1>
+<p>This example shows how to run a basic job on Rescale patform. The analysis software used is Abaqus 6-14-2. The example used is for the pipe-in-pip integrity analysis. This example only shows the workflow. The analysis files are not shared.</p>
+<p>Go to <a class="reference external" href="https://platform.rescale.com/">https://platform.rescale.com/</a> and login with your login details. In the home screen you will see all the jobs that you have created and the jobs that have been shared with you. From the home scareen select <strong>Create New Job</strong>.</p>
+<section id="input-files">
+<h2>Input Files<a class="headerlink" href="#input-files" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Check that the <strong>Job Type</strong> is <strong>Basic</strong>.</p></li>
+<li><p>Rename the Job with a unique name so that you can find it later.</p></li>
+<li><p>Upload input files:</p>
+<ul>
+<li><p>Using <strong>Upload from this computer</strong> individually.</p></li>
+<li><p>Create a compressed file <code class="docutils literal notranslate"><span class="pre">.zip</span></code> containing all the files.</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="_images/input.JPG"><img alt="_images/input.JPG" class="align-center" src="_images/input.JPG" style="width: 750px;" /></a>
+<p>On completion, the Input Files setup page should show all the files uploaded.</p>
+</section>
+<section id="software-settings">
+<h2>Software Settings<a class="headerlink" href="#software-settings" title="Permalink to this heading"></a></h2>
+<p>In the next section select the abaqus software as shown below.</p>
+<a class="reference internal image-reference" href="_images/soft.JPG"><img alt="_images/soft.JPG" class="align-center" src="_images/soft.JPG" style="width: 700px;" /></a>
+<p>Once Abaqus is selected the following window will appear that will ask you to specify version, terminal commands and licence.</p>
+<dl>
+<dt>Version</dt><dd><p>User can use any abaqus version here. The versions are available form <strong>6.13</strong> to <strong>2021</strong> but ideally user should use the version that matches user’s system installation so that the generated files are compatible on the user’s computer.</p>
+</dd>
+<dt>Commands</dt><dd><p>The default command is <code class="docutils literal notranslate"><span class="pre">abaqus</span> <span class="pre">job=&lt;job&gt;</span> <span class="pre">cpus=$RESCALE_CORES_PER_SLOT</span> <span class="pre">mp_mode=mpi</span> <span class="pre">interactive</span></code>. Replace <code class="docutils literal notranslate"><span class="pre">&lt;job&gt;</span></code> with the input file you want to run (For example <code class="docutils literal notranslate"><span class="pre">job=reeling.inp</span></code>). You can leave the rest of the commands as is. You can add mutiple commands (including post-processing) here which will execute one by one.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/comm.JPG"><img alt="_images/comm.JPG" class="align-center" src="_images/comm.JPG" style="width: 700px;" /></a>
+</div></blockquote>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All filenames should be in the lowercase. Rescale CentOS interface converts the filenames to lowercase and it will throw an input error if the filename do not match the name of the imported parameter files within the <code class="docutils literal notranslate"><span class="pre">.inp</span></code> files.</p>
+</div>
+<dl>
+<dt>Licence</dt><dd><p>Check <span class="guilabel">Use Existing License</span> button. The two licence servers available for TFMC Abaqus users: <code class="docutils literal notranslate"><span class="pre">27101&#64;10.113.36.117</span></code> and <code class="docutils literal notranslate"><span class="pre">27101&#64;172.22.20.51</span></code>. You can add both servers to your job by adding a semicolon <code class="docutils literal notranslate"><span class="pre">:</span></code> in between. This will make abaqus search for licence on the second server if the first one fails.</p>
+<a class="reference internal image-reference" href="_images/lic3.JPG"><img alt="_images/lic3.JPG" class="align-center" src="_images/lic3.JPG" style="width: 700px;" /></a>
+</dd>
+</dl>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>Although not required but if you press <span class="guilabel">Check Availability</span> button, it will show that <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">license</span> <span class="pre">server</span> <span class="pre">is</span> <span class="pre">down</span> <span class="pre">or</span> <span class="pre">not</span> <span class="pre">responding</span></code>. This is a bug in the system and you can safely ignore it.</p>
+</div>
+</section>
+<section id="hardware-setting">
+<h2>Hardware Setting<a class="headerlink" href="#hardware-setting" title="Permalink to this heading"></a></h2>
+<p>For a basic job, there are following hardware settings to edit: Number of Cores, Core Type, Walltime and Price. The hardware settings you choose is reflected on the hourly price of the job.</p>
+<a class="reference internal image-reference" href="_images/core.JPG"><img alt="_images/core.JPG" class="align-center" src="_images/core.JPG" style="width: 700px;" /></a>
+<dl>
+<dt>Number of Cores</dt><dd><p>More cores you use, more costly the hardware would be and more license tokens would be used. Please choose prudently. For most jobs, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">cores</span></code> give good performance. You can use lower number of cores if results are not required immediately for example if you are running the job overnight.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Number of Cores</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>16</p></th>
+<th class="head"><p>24</p></th>
+<th class="head"><p>32</p></th>
+<th class="head"><p>64</p></th>
+<th class="head"><p>128</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Number of Abaqus Tokens</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>8</p></td>
+<td><p>12</p></td>
+<td><p>16</p></td>
+<td><p>19</p></td>
+<td><p>21</p></td>
+<td><p>28</p></td>
+<td><p>38</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Core Type</dt><dd><p>This determines the speed per core. The availability depends upon the Abaqus version you selected. Based on the availability, the following selection order can be used to be cost effective.</p>
+<p><span class="guilabel">Carbon</span> &gt; <span class="guilabel">Emarald Max</span> &gt; <span class="guilabel">Luna Max</span></p>
+</dd>
+</dl>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><span class="guilabel">Emarald Max</span> allows you to specify minimum number of cores as low as <strong>1</strong>. However the minimum number of cores on  <span class="guilabel">Luna Max</span> is <strong>24</strong> and on <span class="guilabel">Carbon</span> is <strong>44</strong> which would make an expensive run and consume a lot of tokens. To reduce number of cores you can manually change the number of cores in the software settings command section. You can change <code class="docutils literal notranslate"><span class="pre">cpus=$RESCALE_CORES_PER_SLOT</span></code> to <code class="docutils literal notranslate"><span class="pre">cpus=2</span></code> to use <strong>2</strong> cores insead of the default minimum.</p>
+</div>
+<dl>
+<dt>Walltime</dt><dd><p>This indicates the time limit on the job. If the job execution time exceeds the walltime then the job will be terminated. Please choose this based on the analysis expected runtime.</p>
+</dd>
+<dt>Price</dt><dd><p>You will have either <em>On Demand Economy</em>, <em>On Demand Priority</em>, or both options depending on the hardware availability. For urgent tasks, select <strong>On Demand Priority</strong> to ensure dedicated hardware is alloted to your job. More details on can be found at <a class="reference external" href="https://docs.rescale.com/articles/on-demand-setting/">https://docs.rescale.com/articles/on-demand-setting/</a></p>
+<p><em>Selecting the On Demand Economy mode will submit your job into the run queue, but it may experience a moderate delay before the run is started. The benefit to running the On Demand Economy setting is a reduced price point as compared to the On Demand Priority mode.</em></p>
+<p>– Rescale Documentation</p>
+</dd>
+</dl>
+</section>
+<section id="running-and-monitoring">
+<h2>Running and Monitoring<a class="headerlink" href="#running-and-monitoring" title="Permalink to this heading"></a></h2>
+<p>Reference Job: <code class="docutils literal notranslate"><span class="pre">MqphW</span></code></p>
+<p>The <strong>Review</strong> step shows a summary of the job prior to submission. If everything is satisfactory, click the <strong>Submit</strong> button to begin the job. Once submitted, the sidebar will show the following options:</p>
+<dl>
+<dt>Status</dt><dd><p>This section shows the current status of the job. The server takes 4-5 minutes to start. After the job is started you can select and click <code class="docutils literal notranslate"><span class="pre">process_output.log</span></code> file to see the live command line output or <code class="docutils literal notranslate"><span class="pre">.sta</span></code> file to see the status of the current job.</p>
+<a class="reference internal image-reference" href="_images/run.JPG"><img alt="_images/run.JPG" class="align-center" src="_images/run.JPG" style="width: 700px;" /></a>
+<p>You can see the percentage of CPU usage under <span class="guilabel">Cluster Status</span> section. It will give you an insight if you have over or under specified the hardware for your analysis.</p>
+<a class="reference internal image-reference" href="_images/load.JPG"><img alt="_images/load.JPG" class="align-center" src="_images/load.JPG" style="width: 700px;" /></a>
+</dd>
+<dt>Results</dt><dd><p>Once the job is completed or failed, results section will show all the generated files. Some of the files such as <code class="docutils literal notranslate"><span class="pre">.dat</span></code> files can be open in the browser but other files like <code class="docutils literal notranslate"><span class="pre">.msg</span></code> need to be downloaded to the computer to view it.</p>
+</dd>
+<dt>Charts</dt><dd><p>This is a feature in Rescale that allows you to see selected output of the analysis as a table and chart. It requires a specific type of post processing script. See <a class="reference internal" href="5_batch.html#results"><span class="std std-ref">Results</span></a> section for sample output.</p>
+</dd>
+</dl>
+</section>
+<section id="post-processing">
+<h2>Post Processing<a class="headerlink" href="#post-processing" title="Permalink to this heading"></a></h2>
+<p>You can add post-processing commands when giving commands in the software settings page.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/post.JPG"><img alt="_images/post.JPG" class="align-center" src="_images/post.JPG" style="width: 800px;" /></a>
+</div></blockquote>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>Since Rescale interface purely relies on the command line arguments, Abaqus viewer will not open during the post processing script and the commands such as <code class="docutils literal notranslate"><span class="pre">abaqus</span> <span class="pre">view</span> <span class="pre">script=post_processing_script.py</span></code> will throw an error. Instead use <code class="docutils literal notranslate"><span class="pre">noGUI</span></code> keyword to instruct Abaqus to not open viewer and read the <code class="docutils literal notranslate"><span class="pre">.odb</span></code> file form the command line.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="1_intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="4_download.html" class="btn btn-neutral float-right" title="Downloading Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 TechnipFMC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

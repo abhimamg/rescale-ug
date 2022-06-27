@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Batch Processing &mdash; Rescale User Guide 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Downloading Files" href="4_download.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Rescale User Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_simple.html">Running First Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_download.html">Downloading Files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Batch Processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-job">Create Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-template-and-cases">Create Template and Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upload-files">Upload Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-settings">Hardware Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#results">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resubmit-failed-jobs">Resubmit Failed Jobs</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Rescale User Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Batch Processing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/5_batch.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="batch-processing">
+<h1>Batch Processing<a class="headerlink" href="#batch-processing" title="Permalink to this heading"></a></h1>
+<p>Reference Job: <code class="docutils literal notranslate"><span class="pre">nRRKeb</span></code></p>
+<p>This section shows how to setup Design of Experiments (DOE) with variable design pattern for Abaqus analysis. We will simulate to perform a parametric sweep of the different straightner radius and straighner stroke using DOE job type option available on Rescale.</p>
+<section id="create-job">
+<h2>Create Job<a class="headerlink" href="#create-job" title="Permalink to this heading"></a></h2>
+<p>On the Rescale Platform, start by clicking <strong>Create New Job</strong>. Change the <strong>Job type</strong> to DOE as shown in the screen shot below. You can see the platform configuration layout change to DOE setup. Add supplementary input files using the Specify Inputs window.</p>
+<a class="reference internal image-reference" href="_images/doe1.JPG"><img alt="_images/doe1.JPG" class="align-center" src="_images/doe1.JPG" style="width: 700px;" /></a>
+</section>
+<section id="create-template-and-cases">
+<h2>Create Template and Cases<a class="headerlink" href="#create-template-and-cases" title="Permalink to this heading"></a></h2>
+<p>Modify the main input file <strong>reeling_input.inp</strong> template with keyword in the <code class="docutils literal notranslate"><span class="pre">${&lt;variable-name&gt;}</span></code> format so that rescale can find which value to replace.</p>
+<a class="reference internal image-reference" href="_images/template.png"><img alt="_images/template.png" class="align-center" src="_images/template.png" style="width: 600px;" /></a>
+<p>Create <strong>data.csv</strong> file with description of the values you want to use where each row represents a new case. Use header names same as the keyword names in the previous step.</p>
+<a class="reference internal image-reference" href="_images/data.png"><img alt="_images/data.png" class="align-center" src="_images/data.png" style="width: 200px;" /></a>
+</section>
+<section id="upload-files">
+<h2>Upload Files<a class="headerlink" href="#upload-files" title="Permalink to this heading"></a></h2>
+<p>In parallel settings, select <span class="guilabel">Use a run definition file (CSV)</span> and upload the <strong>data.csv</strong> file to define variable parameters. Alternatively, you can define variable range using <span class="guilabel">Specify your variables here</span> section.</p>
+<a class="reference internal image-reference" href="_images/doe2.JPG"><img alt="_images/doe2.JPG" class="align-center" src="_images/doe2.JPG" style="width: 700px;" /></a>
+<p>Next, in templates section, upload the main input file  <strong>reeling_input.inp</strong>.</p>
+<a class="reference internal image-reference" href="_images/doe3.JPG"><img alt="_images/doe3.JPG" class="align-center" src="_images/doe3.JPG" style="width: 700px;" /></a>
+</section>
+<section id="hardware-settings">
+<h2>Hardware Settings<a class="headerlink" href="#hardware-settings" title="Permalink to this heading"></a></h2>
+<p>In hardware settings, specify the number of slots (parallel executions) and cores per slot you want to use. More slots means more licences used simultaneously. Refer to section <a class="reference internal" href="2_simple.html#hardware-setting"><span class="std std-ref">Hardware Setting</span></a> to understand how to configure cost effective hardware.</p>
+<a class="reference internal image-reference" href="_images/doe4.JPG"><img alt="_images/doe4.JPG" class="align-center" src="_images/doe4.JPG" style="width: 700px;" /></a>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading"></a></h2>
+<p>Once analysis is somplete, individual runs with specified variable value will be available in Results section to explore.</p>
+<a class="reference internal image-reference" href="_images/doe5.JPG"><img alt="_images/doe5.JPG" class="align-center" src="_images/doe5.JPG" style="width: 700px;" /></a>
+</section>
+<section id="resubmit-failed-jobs">
+<h2>Resubmit Failed Jobs<a class="headerlink" href="#resubmit-failed-jobs" title="Permalink to this heading"></a></h2>
+<p>Reference Job: <code class="docutils literal notranslate"><span class="pre">WDsYgb</span></code></p>
+<p>Sometimes not all jobs will be completed. It may be due to convergence issues (most likely), pipe buckling or input error. In those cases Rescale keeps track of what cases have not been completed so you can resubmit them. Click <span class="guilabel">Resubmit Failed Runs</span> to see what jobs have not been completed.</p>
+<a class="reference internal image-reference" href="_images/doe7.JPG"><img alt="_images/doe7.JPG" class="align-center" src="_images/doe7.JPG" style="width: 700px;" /></a>
+<p>But take this feature with a pinch of salt. Sometimes Rescale will include a few completed jobs in this list. This is due to an unknown error that marks the <code class="docutils literal notranslate"><span class="pre">.sta</span></code> file as incomplete even after all the steps have been completed. Re-check your <code class="docutils literal notranslate"><span class="pre">.sta</span></code> files so that only incomplete jobs are resubmitted and remove completed jobs from the csv file.</p>
+<a class="reference internal image-reference" href="_images/doe8.JPG"><img alt="_images/doe8.JPG" class="align-center" src="_images/doe8.JPG" style="width: 430px;" /></a>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="4_download.html" class="btn btn-neutral float-left" title="Downloading Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021 TechnipFMC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
